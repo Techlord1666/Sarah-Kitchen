@@ -1,21 +1,19 @@
 <!DOCTYPE html>
-
-<html class="light" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Authentic Eats</title>
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
-<!-- Material Symbols -->
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<!-- Tailwind CSS -->
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<!-- Theme Configuration -->
-<script id="tailwind-config">
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Sarah Kitchen | Authentic Homemade Meals</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+    <!-- Material Symbols -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
       tailwind.config = {
         darkMode: "class",
         theme: {
@@ -37,232 +35,206 @@
               "xl": "0.75rem", 
               "2xl": "1rem",
               "full": "9999px"
-            },
-            boxShadow: {
-              'soft': '0 4px 20px -2px rgba(0, 0, 0, 0.05)',
             }
           },
         },
       }
     </script>
-<style>
-        body {
-            font-family: "Plus Jakarta Sans", sans-serif;
-            -webkit-font-smoothing: antialiased;
-        }
-        .hide-scrollbar::-webkit-scrollbar {
-            display: none;
-        }
-        .hide-scrollbar {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
+    <style>
+        body { font-family: "Plus Jakarta Sans", sans-serif; -webkit-font-smoothing: antialiased; }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .modal-active { overflow: hidden; }
     </style>
-<style>
-    body {
-      min-height: max(884px, 100dvh);
-    }
-  </style>
-  </head>
+</head>
 <body class="bg-background-light dark:bg-background-dark min-h-screen w-full flex flex-col overflow-x-hidden">
+
 <!-- Top App Bar -->
 <header class="sticky top-0 z-50 bg-white/95 dark:bg-background-dark/95 backdrop-blur-sm border-b border-gray-100 dark:border-gray-800">
-<div class="flex items-center px-4 py-3 justify-between max-w-md mx-auto w-full">
-<button class="text-neutral-dark dark:text-white flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
-<span class="material-symbols-outlined" style="font-size: 24px;">menu</span>
-</button>
-<h2 class="text-neutral-dark dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">Authentic Eats</h2>
-<button class="flex size-10 cursor-pointer items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors text-neutral-dark dark:text-white relative">
-<span class="material-symbols-outlined" style="font-size: 24px;">shopping_cart</span>
-<span class="absolute top-1 right-1 flex h-2.5 w-2.5">
-<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-<span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-primary"></span>
-</span>
-</button>
-</div>
+    <div class="flex items-center px-4 py-3 justify-between max-w-6xl mx-auto w-full">
+        <div class="flex items-center gap-4">
+            <button class="text-neutral-dark dark:text-white flex size-10 items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-gray-800">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+            <h2 class="text-neutral-dark dark:text-white text-xl font-bold tracking-tight">Sarah Kitchen</h2>
+        </div>
+        <button onclick="toggleModal()" class="bg-primary text-white px-4 py-2 rounded-full text-sm font-bold hover:bg-red-600 transition-all">
+            Order Now
+        </button>
+    </div>
 </header>
+
 <!-- Main Content Wrapper -->
-<main class="flex-1 w-full max-w-md mx-auto bg-white dark:bg-background-dark shadow-xl shadow-gray-200/50 dark:shadow-none min-h-screen pb-20">
-<!-- Hero Section -->
-<div class="p-4">
-<div class="relative flex min-h-[420px] flex-col gap-6 bg-cover bg-center bg-no-repeat rounded-2xl items-center justify-end p-6 overflow-hidden shadow-soft group" data-alt="Close up of a delicious spicy ramen bowl with steam rising" style='background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.2) 60%, rgba(0,0,0,0) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuBkP2g-PGWPDCYlCfiQHD0oN4qqEMPV8xnp0SmeQNURpEccmcNGQhOhy3znDPiz-A_RuOKSfCAW52dBzdOcjLjOR2juJBzU4jQ-NcQjYNXiipVg12sNkZQYibXO8fD6AzUhevad_5dBiJvc0tVJaerBfiy6iZu5QlxdW7gJ17aeb4PmzG3sCJ8uElFThMikxsJCY0BagZupMD9njZzNLL8nXRCxxOGig4_PZXFcDSHmHNm9bc6YJLOsCYyeRlwlBKsguYRHJk2usd0");'>
-<div class="flex flex-col gap-3 text-center z-10">
-<h1 class="text-white text-4xl font-extrabold leading-tight tracking-tight drop-shadow-md">
-                        Taste the <span class="text-primary">Authenticity</span>
-</h1>
-<h2 class="text-gray-200 text-base font-medium leading-relaxed max-w-[280px] mx-auto">
-                        Homemade meals delivered straight to your door with love.
-                    </h2>
-</div>
-<button class="w-full bg-primary hover:bg-red-600 active:scale-[0.98] transition-all text-white h-12 rounded-xl text-base font-bold shadow-lg shadow-primary/30 flex items-center justify-center gap-2 mt-2 z-10">
-                    Order Now
-                    <span class="material-symbols-outlined text-sm">arrow_forward</span>
-</button>
-</div>
-</div>
-<!-- Spacer -->
-<div class="h-4"></div>
-<!-- My Story Section -->
-<section>
-<div class="flex items-center justify-between px-4 pb-3 pt-2">
-<h2 class="text-neutral-dark dark:text-white tracking-tight text-2xl font-bold leading-tight">My Story</h2>
-<div class="h-1 w-12 bg-primary/20 rounded-full"></div>
-</div>
-<div class="px-4 pb-6">
-<div class="flex flex-col sm:flex-row gap-6 items-center sm:items-start bg-background-light dark:bg-[#2a1a1a] p-5 rounded-2xl">
-<div class="relative shrink-0">
-<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full w-28 h-28 border-4 border-white dark:border-gray-700 shadow-md" data-alt="Portrait of a smiling female chef in a white coat" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDPMv-2u_5rJEyNp7CmCTzqGJXHJX6E6E-CYrK8Q6oOhr7yI_kd1N9sswV1JwkMhRIqT-J5sRTTReupx8YxbBljS0n44nfji-xR_GmcruA9ZnVWfly3vL15hssymCLccaW2x8ZK0krVTWJ4fJoLgEluIJN4nTILmjYvHfyVn_0ufpd-Lr7xgWJPH9zJbGN8Go6d73ldW9L4OYeHBl1-Ppu590sCOfdtQV3GmZXtG--2l2MiW-skAfRgEoTDj7ncGUjY9DJrHu6wxOs");'></div>
-<div class="absolute bottom-0 right-0 bg-primary text-white p-1.5 rounded-full border-2 border-white dark:border-gray-700">
-<span class="material-symbols-outlined text-sm">restaurant_menu</span>
-</div>
-</div>
-<div class="flex flex-col text-center sm:text-left">
-<p class="text-neutral-dark dark:text-white text-xl font-bold mb-2">Hi, I'm Chef Anna</p>
-<p class="text-neutral-gray dark:text-gray-300 text-sm leading-relaxed">
-                            My passion for cooking started in my grandmother's kitchen, where I learned that love is the most important ingredient. Every dish tells a story of tradition and flavor.
-                        </p>
-</div>
-</div>
-</div>
-</section>
-<!-- Our Favorites (Menu Showcase) -->
-<section>
-<div class="flex items-center justify-between px-4 pb-4 pt-2">
-<h2 class="text-neutral-dark dark:text-white tracking-tight text-2xl font-bold leading-tight">Our Favorites</h2>
-<a class="text-primary text-sm font-bold flex items-center" href="#">See All <span class="material-symbols-outlined text-sm ml-0.5">chevron_right</span></a>
-</div>
-<div class="flex flex-col gap-4 px-4 pb-6">
-<!-- Card 1 -->
-<div class="group relative flex flex-col overflow-hidden rounded-xl bg-white dark:bg-[#2a1a1a] shadow-sm border border-gray-100 dark:border-gray-800 hover:shadow-md transition-shadow">
-<div class="aspect-video w-full bg-cover bg-center" data-alt="Bowl of spicy miso ramen with egg and pork belly" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDTarDUIgjsKJ6HS__gg1VeAXZ5D9mh1IG02PQFXPVSpvHGrVR0TRgzKCaq-YxSPbGqREwUAXqe4FGpWuTVTDNd1OnXpIxMfuGfmjS3itnGKtPfiF2Te_pPkl8nkfOgb1vHVUFXdQYSG5oYv1bv_HkdYVOxxrrxjzCN2LWEuQ0T98JoBGYLoOuEA5PEQpO89vaJkt7O1qfCeRQvMK7ZB2xI_lkcydJekFi6IN5fEI_w0QfMlGlKZ9B4YegXBs11Y-KB5mbNMShaZ4Y");'>
-<div class="absolute top-3 left-3 bg-white/90 dark:bg-black/80 px-2 py-1 rounded text-xs font-bold text-neutral-dark dark:text-white shadow-sm">
-                             Top Seller
-                         </div>
-</div>
-<div class="p-4">
-<div class="flex justify-between items-start mb-2">
-<h3 class="text-lg font-bold text-neutral-dark dark:text-white">Spicy Miso Ramen</h3>
-<span class="text-primary font-bold">$14.50</span>
-</div>
-<p class="text-sm text-neutral-gray dark:text-gray-400 line-clamp-2 mb-4">
-                            Rich pork broth simmered for 12 hours, served with fresh noodles, soft-boiled egg, and chashu pork.
-                        </p>
-<button class="w-full py-2.5 rounded-lg bg-primary/10 text-primary hover:bg-primary hover:text-white transition-colors text-sm font-bold flex items-center justify-center gap-2">
-<span class="material-symbols-outlined text-lg">add</span>
-                            Add to Cart
-                        </button>
-</div>
-</div>
-<!-- Card 2 -->
-<div class="group relative flex flex-col overflow-hidden rounded-xl bg-white dark:bg-[#2a1a1a] shadow-sm border border-gray-100 dark:border-gray-800 hover:shadow-md transition-shadow">
-<div class="aspect-video w-full bg-cover bg-center" data-alt="Gourmet burger with melted cheese and fresh lettuce on a wooden board" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDrAi-h88R8j_XNXml8suj67UFhlo1gc9mZcbS7TJc8CV8K3f0WLGAheCKGvuQxL78RY4YjPdoTDa40dYwj135EZc68Y_5pHJqEkW1LDGmmftVICl8D-HsBpN_dOg-wVepbt1nxBEMf3Zpij0Gr_8I6lmwTeJ5NgJXzGdEMM5xvW3g2xJJwM7cKMQKWhFa9tSbSSP82N5H2C-Ax8EyUFidnGa5M0DixFm26k-9jaUq1cI3ZOlfsaIultzVKXvVOrNUA0V6MtG_xFvA");'>
-</div>
-<div class="p-4">
-<div class="flex justify-between items-start mb-2">
-<h3 class="text-lg font-bold text-neutral-dark dark:text-white">Artisan Wagyu Burger</h3>
-<span class="text-primary font-bold">$18.00</span>
-</div>
-<p class="text-sm text-neutral-gray dark:text-gray-400 line-clamp-2 mb-4">
-                            Premium wagyu beef patty, aged cheddar, caramelized onions, and our secret sauce on a brioche bun.
-                        </p>
-<button class="w-full py-2.5 rounded-lg bg-primary/10 text-primary hover:bg-primary hover:text-white transition-colors text-sm font-bold flex items-center justify-center gap-2">
-<span class="material-symbols-outlined text-lg">add</span>
-                            Add to Cart
-                        </button>
-</div>
-</div>
-</div>
-</section>
-<!-- Testimonials -->
-<section class="bg-background-light dark:bg-[#2a1a1a] py-8 my-4 rounded-3xl mx-2">
-<h2 class="text-neutral-dark dark:text-white tracking-tight text-2xl font-bold leading-tight px-4 pb-6 text-center">What Our Customers Say</h2>
-<div class="flex overflow-x-auto gap-4 px-4 pb-4 hide-scrollbar snap-x">
-<!-- Testimonial 1 -->
-<div class="snap-center shrink-0 w-[280px] bg-white dark:bg-background-dark p-5 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800 flex flex-col justify-between h-[200px]">
-<div>
-<div class="flex text-yellow-400 mb-3">
-<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
-</div>
-<p class="text-neutral-dark dark:text-white font-medium italic text-sm">"The ramen reminds me of my trip to Tokyo. Absolutely authentic and delicious!"</p>
-</div>
-<div class="flex items-center gap-3 mt-4">
-<div class="w-8 h-8 rounded-full bg-gray-200 bg-cover bg-center" data-alt="Small avatar of a smiling woman" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCpUXSS_n58XlAzaQZIc7kFZviGR2HHTuhtjsd4o0sCAFdOIi3Bqjl9VdUsVhB65wv5Vl0bipoq8Lf2_IjYPqNHyfrVOvBETnQbDjxGfKvBi_GFv2UUqokPFtnPX0Jc4-TGPRayvPttIRJqlPUepCTvTyibFCarC4wGV2rdlWwVCE3TuItkxyDGrMYgUNGQ4JnicidkRUa5BiwMhQxKFbPaihxDQOjvvfsciIyLgZM-urpIg3R8AXo6CVGaEW6Zd9fV0ewqAAznd1o");'></div>
-<span class="text-xs font-bold text-neutral-gray dark:text-gray-400">Sarah Jenkins</span>
-</div>
-</div>
-<!-- Testimonial 2 -->
-<div class="snap-center shrink-0 w-[280px] bg-white dark:bg-background-dark p-5 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800 flex flex-col justify-between h-[200px]">
-<div>
-<div class="flex text-yellow-400 mb-3">
-<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star_half</span>
-</div>
-<p class="text-neutral-dark dark:text-white font-medium italic text-sm">"Incredible flavors. The delivery was fast and the food was still piping hot."</p>
-</div>
-<div class="flex items-center gap-3 mt-4">
-<div class="w-8 h-8 rounded-full bg-gray-200 bg-cover bg-center" data-alt="Small avatar of a man with glasses" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCQUlD-wfXjxHYWL1HV-AEIvVubxUppviEyf8w8kXlFPqAWkSAvaSs0VhwWb9pRDxVVN9vRJfHqjKdQm_uXSYuOZL1un60HogTG0eAs7HvVuGJR7Ro2SXWwXPHnvDiv0FnXJcCbEAeZ3mQgxuodI_Z-F4uHIHlzGbSqX67uZGxo5LpHlF4OWu904W-mGS9FRoS0Iwrlb-GU3H-JCijiCjxQ1oy5WFZmn86nskpZIkBZzNZJGgy7C3AVInDy0xWzMac4QvTCdmW8B2A");'></div>
-<span class="text-xs font-bold text-neutral-gray dark:text-gray-400">Michael Chen</span>
-</div>
-</div>
-<!-- Testimonial 3 -->
-<div class="snap-center shrink-0 w-[280px] bg-white dark:bg-background-dark p-5 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800 flex flex-col justify-between h-[200px]">
-<div>
-<div class="flex text-yellow-400 mb-3">
-<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
-</div>
-<p class="text-neutral-dark dark:text-white font-medium italic text-sm">"Hands down the best burger in the city. Chef Anna knows her stuff!"</p>
-</div>
-<div class="flex items-center gap-3 mt-4">
-<div class="w-8 h-8 rounded-full bg-gray-200 bg-cover bg-center" data-alt="Small avatar of a woman with curly hair" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDextUkOYer60wD56N7RCwm_ZZY7GdFLc-a-zb5bHRpXibhg2vT9FPzfArYJTO6_e0jGEnIVNQ9u0ugPuPROUauegaokLb_8U1KZkSLfNCwjI_BshV9yVrJv0FH93a3K7gjLPvdbcc9xSencgbywRAGdmdvA03j8tiVmIro9VfvyRIIr2q4TbdNptbSU9umFb7lsBqLUv9rMiMlqCla78gUjtN6NJLjCjC37y5EpqJzqRH4na1mrwAhl5eKSwja74yeK_PAtt6Ok6g");'></div>
-<span class="text-xs font-bold text-neutral-gray dark:text-gray-400">Jessica R.</span>
-</div>
-</div>
-</div>
-</section>
-<!-- Ready to Order / Contact Form -->
-<section class="px-4 py-8">
-<h2 class="text-neutral-dark dark:text-white tracking-tight text-2xl font-bold leading-tight mb-2">Ready to order?</h2>
-<p class="text-neutral-gray dark:text-gray-400 text-sm mb-6">Drop us a message or request a special catering order.</p>
-<form class="flex flex-col gap-4">
-<div class="flex flex-col gap-1">
-<label class="text-xs font-bold text-neutral-dark dark:text-gray-300 uppercase tracking-wider" for="name">Name</label>
-<input class="w-full rounded-lg border-gray-200 dark:border-gray-700 bg-background-light dark:bg-[#2a1a1a] p-3 text-sm focus:border-primary focus:ring-primary dark:text-white dark:placeholder-gray-500" id="name" placeholder="Your Name" type="text"/>
-</div>
-<div class="flex flex-col gap-1">
-<label class="text-xs font-bold text-neutral-dark dark:text-gray-300 uppercase tracking-wider" for="email">Email</label>
-<input class="w-full rounded-lg border-gray-200 dark:border-gray-700 bg-background-light dark:bg-[#2a1a1a] p-3 text-sm focus:border-primary focus:ring-primary dark:text-white dark:placeholder-gray-500" id="email" placeholder="you@example.com" type="email"/>
-</div>
-<div class="flex flex-col gap-1">
-<label class="text-xs font-bold text-neutral-dark dark:text-gray-300 uppercase tracking-wider" for="message">Message</label>
-<textarea class="w-full rounded-lg border-gray-200 dark:border-gray-700 bg-background-light dark:bg-[#2a1a1a] p-3 text-sm focus:border-primary focus:ring-primary dark:text-white dark:placeholder-gray-500 resize-none" id="message" placeholder="Tell us what you're craving..." rows="4"></textarea>
-</div>
-<button class="mt-2 w-full bg-primary hover:bg-red-600 active:bg-red-700 transition-colors text-white h-12 rounded-lg text-base font-bold shadow-lg shadow-primary/20 flex items-center justify-center gap-2" type="button">
-                    Send Message
-                    <span class="material-symbols-outlined text-sm">send</span>
-</button>
-</form>
-</section>
-<!-- Footer -->
-<footer class="mt-8 py-8 border-t border-gray-100 dark:border-gray-800 bg-background-light dark:bg-[#1a0e0e] text-center">
-<h3 class="font-bold text-lg text-neutral-dark dark:text-white mb-4">Authentic Eats</h3>
-<div class="flex justify-center gap-6 mb-6 text-neutral-gray dark:text-gray-400">
-<!-- Social Icons using Material Symbols loosely for demo purposes, normally would be brand icons -->
-<a class="hover:text-primary transition-colors" href="#"><span class="text-sm font-semibold">Instagram</span></a>
-<a class="hover:text-primary transition-colors" href="#"><span class="text-sm font-semibold">Twitter</span></a>
-<a class="hover:text-primary transition-colors" href="#"><span class="text-sm font-semibold">Facebook</span></a>
-</div>
-<p class="text-xs text-gray-400">© 2024 Authentic Eats. All rights reserved.</p>
-</footer>
+<main class="flex-1 w-full max-w-6xl mx-auto bg-white dark:bg-background-dark shadow-xl dark:shadow-none min-h-screen pb-20">
+    
+    <!-- Hero Section -->
+    <div class="p-4">
+        <div class="relative flex min-h-[450px] flex-col gap-6 bg-cover bg-center bg-no-repeat rounded-3xl items-center justify-center p-6 overflow-hidden shadow-soft" 
+             style='background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.3) 100%), url("https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&q=80&w=1000");'>
+            <div class="flex flex-col gap-3 text-center z-10">
+                <h1 class="text-white text-5xl md:text-6xl font-extrabold leading-tight tracking-tight">
+                    Welcome to <span class="text-primary">Sarah Kitchen</span>
+                </h1>
+                <p class="text-gray-200 text-lg md:text-xl font-medium max-w-2xl mx-auto">
+                    Homemade meals delivered straight to your door with love and authentic flavors.
+                </p>
+            </div>
+            <button onclick="toggleModal()" class="bg-primary hover:bg-red-600 active:scale-[0.98] transition-all text-white px-8 h-14 rounded-xl text-lg font-bold shadow-lg shadow-primary/30 flex items-center gap-2 z-10">
+                Click to Order
+                <span class="material-symbols-outlined">restaurant</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section class="py-12 px-4" id="about">
+        <div class="max-w-4xl mx-auto">
+            <div class="flex flex-col md:flex-row gap-8 items-center bg-background-light dark:bg-[#2a1a1a] p-8 rounded-3xl">
+                <div class="relative shrink-0">
+                    <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-2xl w-48 h-48 border-4 border-white dark:border-gray-700 shadow-xl" 
+                         style='background-image: url("https://images.unsplash.com/photo-1583394238182-6f71f218a66f?auto=format&fit=crop&q=80&w=500");'></div>
+                </div>
+                <div class="flex flex-col text-center md:text-left">
+                    <h2 class="text-primary font-bold text-lg uppercase tracking-widest mb-2">About the Chef</h2>
+                    <p class="text-neutral-dark dark:text-white text-3xl font-bold mb-4">Meet Chef Sarah</p>
+                    <p class="text-neutral-gray dark:text-gray-300 text-lg leading-relaxed">
+                        At Sarah Kitchen, we believe food is a universal language of love. My passion for cooking started in my family kitchen, where I learned that fresh ingredients and patience make the best meals. Every dish I prepare is a piece of my heart, crafted to bring the warmth of a home-cooked meal to your table.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Showcase (Removed Prices) -->
+    <section class="py-10">
+        <div class="flex items-center justify-between px-4 pb-8 max-w-5xl mx-auto">
+            <h2 class="text-neutral-dark dark:text-white text-3xl font-bold">Our Signature Dishes</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-4 max-w-5xl mx-auto">
+            <!-- Card 1 -->
+            <div class="group overflow-hidden rounded-2xl bg-white dark:bg-[#2a1a1a] shadow-sm border border-gray-100 dark:border-gray-800">
+                <div class="aspect-video w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style='background-image: url("https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&q=80&w=500");'></div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-neutral-dark dark:text-white mb-2">Special Spicy Ramen</h3>
+                    <p class="text-neutral-gray dark:text-gray-400 text-sm mb-4">Rich, 12-hour simmered broth with fresh noodles, soft-boiled egg, and marinated toppings.</p>
+                    <button onclick="toggleModal()" class="w-full py-3 rounded-xl bg-gray-100 dark:bg-gray-800 text-neutral-dark dark:text-white font-bold hover:bg-primary hover:text-white transition-colors">View Details / Order</button>
+                </div>
+            </div>
+            <!-- Card 2 -->
+            <div class="group overflow-hidden rounded-2xl bg-white dark:bg-[#2a1a1a] shadow-sm border border-gray-100 dark:border-gray-800">
+                <div class="aspect-video w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style='background-image: url("https://images.unsplash.com/photo-1567167609727-42991fbc092e?auto=format&fit=crop&q=80&w=500");'></div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-neutral-dark dark:text-white mb-2">Artisan Gourmet Burger</h3>
+                    <p class="text-neutral-gray dark:text-gray-400 text-sm mb-4">Premium beef patty, aged cheddar, and caramelized onions on a toasted brioche bun.</p>
+                    <button onclick="toggleModal()" class="w-full py-3 rounded-xl bg-gray-100 dark:bg-gray-800 text-neutral-dark dark:text-white font-bold hover:bg-primary hover:text-white transition-colors">View Details / Order</button>
+                </div>
+            </div>
+            <!-- Card 3 -->
+            <div class="group overflow-hidden rounded-2xl bg-white dark:bg-[#2a1a1a] shadow-sm border border-gray-100 dark:border-gray-800">
+                <div class="aspect-video w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style='background-image: url("https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&q=80&w=500");'></div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-neutral-dark dark:text-white mb-2">Fresh Seasonal Salad</h3>
+                    <p class="text-neutral-gray dark:text-gray-400 text-sm mb-4">A vibrant mix of organic greens, roasted nuts, and our signature balsamic dressing.</p>
+                    <button onclick="toggleModal()" class="w-full py-3 rounded-xl bg-gray-100 dark:bg-gray-800 text-neutral-dark dark:text-white font-bold hover:bg-primary hover:text-white transition-colors">View Details / Order</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ready to Order / WhatsApp Form -->
+    <section class="px-4 py-16 bg-gray-50 dark:bg-[#1a0e0e] mt-10">
+        <div class="max-w-2xl mx-auto text-center">
+            <h2 class="text-neutral-dark dark:text-white text-4xl font-bold mb-4">Ready to taste?</h2>
+            <p class="text-neutral-gray dark:text-gray-400 mb-8 text-lg">Send us your order details directly via WhatsApp for the fastest response.</p>
+            
+            <form id="orderForm" class="flex flex-col gap-4 text-left bg-white dark:bg-[#2a1a1a] p-8 rounded-3xl shadow-xl">
+                <div class="flex flex-col gap-1">
+                    <label class="text-xs font-bold text-neutral-dark dark:text-gray-300 uppercase" for="userName">Your Name</label>
+                    <input class="w-full rounded-lg border-gray-200 dark:border-gray-700 bg-background-light dark:bg-[#181111] p-4 dark:text-white" id="userName" placeholder="Enter your name" type="text" required/>
+                </div>
+                <div class="flex flex-col gap-1">
+                    <label class="text-xs font-bold text-neutral-dark dark:text-gray-300 uppercase" for="userMessage">What would you like to order?</label>
+                    <textarea class="w-full rounded-lg border-gray-200 dark:border-gray-700 bg-background-light dark:bg-[#181111] p-4 dark:text-white resize-none" id="userMessage" placeholder="List the meals you want..." rows="4" required></textarea>
+                </div>
+                <button onclick="sendToWhatsApp()" type="button" class="w-full bg-[#25D366] hover:bg-[#128C7E] transition-colors text-white h-14 rounded-xl text-lg font-bold flex items-center justify-center gap-3 mt-4">
+                    Send via WhatsApp
+                    <span class="material-symbols-outlined">send</span>
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-gray-100 dark:border-gray-800 text-center">
+        <h3 class="font-bold text-2xl text-neutral-dark dark:text-white mb-4">Sarah Kitchen</h3>
+        <p class="text-neutral-gray dark:text-gray-400 max-w-xs mx-auto mb-6">Deliciously homemade, healthily served.</p>
+        <p class="text-xs text-gray-400">© 2024 Sarah Kitchen. All rights reserved.</p>
+    </footer>
 </main>
-</body></html>
+
+<!-- ORDER MODAL (Popup) -->
+<div id="orderModal" class="hidden fixed inset-0 z-[100] flex items-center justify-center p-4">
+    <!-- Backdrop -->
+    <div onclick="toggleModal()" class="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
+    <!-- Modal Content -->
+    <div class="relative bg-white dark:bg-background-dark w-full max-w-md rounded-3xl p-8 shadow-2xl animate-in fade-in zoom-in duration-300">
+        <button onclick="toggleModal()" class="absolute top-4 right-4 text-gray-400 hover:text-primary">
+            <span class="material-symbols-outlined">close</span>
+        </button>
+        <div class="text-center">
+            <div class="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span class="material-symbols-outlined text-primary text-3xl">shopping_basket</span>
+            </div>
+            <h2 class="text-2xl font-bold dark:text-white mb-4">How to Order</h2>
+            <div class="text-left space-y-4 mb-8">
+                <div class="flex gap-3">
+                    <span class="bg-primary text-white w-6 h-6 rounded-full flex items-center justify-center text-xs shrink-0 mt-1">1</span>
+                    <p class="text-neutral-gray dark:text-gray-300">Choose your favorite meals from our menu.</p>
+                </div>
+                <div class="flex gap-3">
+                    <span class="bg-primary text-white w-6 h-6 rounded-full flex items-center justify-center text-xs shrink-0 mt-1">2</span>
+                    <p class="text-neutral-gray dark:text-gray-300">Click the button below to message us on WhatsApp.</p>
+                </div>
+                <div class="flex gap-3">
+                    <span class="bg-primary text-white w-6 h-6 rounded-full flex items-center justify-center text-xs shrink-0 mt-1">3</span>
+                    <p class="text-neutral-gray dark:text-gray-300">Share your delivery address and confirm your payment.</p>
+                </div>
+                <div class="p-3 bg-blue-50 dark:bg-blue-900/20 border border-blue-100 dark:border-blue-800 rounded-xl text-sm text-blue-600 dark:text-blue-300">
+                    <strong>Note:</strong> Delivery takes 30-45 minutes depending on your location.
+                </div>
+            </div>
+            
+            <a href="https://wa.me/2347061495655?text=Hello%20Sarah%20Kitchen,%20I%20would%20like%20to%20place%20an%20order." 
+               class="block w-full bg-primary text-white py-4 rounded-xl font-bold text-lg hover:bg-red-600 transition-all shadow-lg shadow-primary/20">
+                Order Now via WhatsApp
+            </a>
+        </div>
+    </div>
+</div>
+
+<script>
+    function toggleModal() {
+        const modal = document.getElementById('orderModal');
+        modal.classList.toggle('hidden');
+        document.body.classList.toggle('modal-active');
+    }
+
+    function sendToWhatsApp() {
+        const name = document.getElementById('userName').value;
+        const message = document.getElementById('userMessage').value;
+        const phone = "2347061495655";
+        
+        if(!name || !message) {
+            alert("Please fill in your name and order details");
+            return;
+        }
+
+        const encodedMessage = encodeURIComponent(`Hello Sarah Kitchen!\n\nName: ${name}\nOrder Details: ${message}`);
+        const whatsappUrl = `https://wa.me/${phone}?text=${encodedMessage}`;
+        
+        window.open(whatsappUrl, '_blank');
+    }
+</script>
+
+</body>
+</html>
